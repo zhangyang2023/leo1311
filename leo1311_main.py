@@ -63,8 +63,11 @@ class AlgoServerHandler(tornado.web.RequestHandler):
 		res_str = json.dumps(res, ensure_ascii=False)
 		# 检测到异常时，提交答案
 		if len(result) > 0:
-			answer = submit(result)
-			logger.info(answer)
+			try:
+				answer = submit(result)
+				logger.info(answer)
+			except Exception as e:
+				logger.info(e)
 		self.write(res_str)
 
 

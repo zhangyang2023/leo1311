@@ -3,9 +3,6 @@
 
 import csv
 import joblib
-from algo.alarm_association import *
-from algo.apriori import *
-from algo.fp_growth import *
 from config_ini import *
 
 logger = logging.getLogger(__name__)
@@ -16,7 +13,8 @@ def get_data(filename):
 
 
 def algo_main(args):
-	pass
+	return_code = StatusCodeEnum.OK
+	return return_code, []
 
 
 if __name__=='__main__':
